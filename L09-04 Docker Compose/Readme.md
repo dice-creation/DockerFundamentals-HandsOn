@@ -47,7 +47,7 @@ Change the ports value from
 to
 
     - "5001:80"
-
+ 
 ## Deploy again
 
     docker compose -p test up -d

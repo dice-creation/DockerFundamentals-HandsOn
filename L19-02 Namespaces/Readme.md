@@ -37,4 +37,5 @@ Change the namespace to the docker one and get the pods list.
 
     kubectl create ns [name]
     kubectl get ns
+    !! use with caution deletes all the pods/container in that ns
     kubectl delete ns [name]
