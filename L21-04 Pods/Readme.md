@@ -32,8 +32,10 @@ Let’s now create a node running BusyBox, this time attaching bash to our termi
     exit
 
 ## Cleanup
-
-    kubectl delete pod mybox
+    
+    kubectl delete pod mybox 
+    kubectl delete pod mybox --wait=false
+    kubectl delete pod mybox --grace-period=0 --force
 
 ## Create a pod using the declarative way
 
@@ -61,3 +63,36 @@ Print the DBCON environment variable that was set in the YAML file.
 ## Cleanup
 
     kubectl delete -f myapp.yaml
+
+
+## Create a pod
+
+    kubectl create -f [file.yaml]
+
+## Run a pod
+
+    kubectl run [podname] --image=busybox -- /bin/sh -c "sleep 3600"
+
+## List the running pods
+
+    kubectl get pods
+    kubectl get pods -o wide
+
+## Show pod inifo
+
+    kubectl describe pod [podname]
+
+## Extract the pod definition in YAML and save it to a file
+
+    kubectl get pod [podname] -o yaml > file.yaml
+
+## Interactive mode
+
+    kubectl exec -it [podname] -- sh
+
+## Delete a pod
+
+    kubectl delete -f [file.yaml]
+
+## Same using the pod name on delete a pod
+    kubectl delete pod [podname]

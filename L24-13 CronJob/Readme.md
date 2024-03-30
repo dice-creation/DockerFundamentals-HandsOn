@@ -2,13 +2,17 @@
 
 Let's now use the CronJob template.
 
+## CheatSheet
+kubectl get cj                          List CronJobs
+kubectl describe cj [jobName]           Get info
+
 ## Create the Job
 
     kubectl apply -f cronjob.yaml
 
 ## Get the jobs list
 
-    kubectl get cronjobs
+    kubectl get cronjobs 
 
 ## Get more info
 

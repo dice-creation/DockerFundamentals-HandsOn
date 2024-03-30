@@ -1,6 +1,11 @@
 # L24-11
 
 Let's now use the Job template.
+-Workload for short lived tasks
+-Creates one or more Pods and ensures that a specified number of them successfully termnate
+-As pods successfully complete, the Job tracks the successfu completions
+-When a specified number of successful completions is reached, the Job completes
+-on Configure job.yaml always set "restartPolicy to Never"
 
 ## Create the Job
 

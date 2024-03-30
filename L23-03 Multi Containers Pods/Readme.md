@@ -12,8 +12,13 @@ Let’s create multiple containers in a Pod using a YAML file.  We'll use the Bu
     kubectl describe pod two-containers
 
 ## Connect to the BusyBox container
+##pod name then the container name
 
     kubectl exec -it two-containers --container mybox -- /bin/sh
+
+## Get the logs for a container
+
+    kubectl logs [podname] -c [containername]
 
 ## Fetch the HTML page served by the Nginx container
 

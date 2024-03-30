@@ -1,6 +1,27 @@
 # L24-09
 
 Let's now create a StafulSet.
+-For pods that must persist or maintain state
+-Unlike a Deployment, a statefulSet maintains a sticky identity for each of their Pods
+-each has a persistent identifier
+-if a pod dies, it is replaced with another one using the identifier
+-creates a series of pods in sequence from 0 to x and deletes the, from x to 0
+-Typical use
+  Stable, unique network identifiers
+  Stable, databases using persistent storage
+
+-Containers are stateless by design
+-StatefulSets offers a solution for stateful scenarios
+-A better approach could be to use the Cloud provider database services
+-Deleteing a statefulSet will not delete the PVCs
+  You have to do this manually
+
+## CheatSheet
+kubectl apply -f [file.yaml]            Create a statefulSet
+kubectl get sts                         List StatefulSets
+kubectl descrbe sts [rsName]            Get info
+kubectl delete -f [file.yaml]           delete a statefulSet
+kubectl delete sts [rsName]             Same as deleting
 
 ## Create the Deployment
 
@@ -13,6 +34,10 @@ Let's now create a StafulSet.
 ## Get a list of the PersistentVolumes Claims
 
     kubectl get pvc
+
+## List the nginx-sts replcaSets
+
+    kubectl get po
 
 ## Create a file in nginx-sts-2
 
